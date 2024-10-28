@@ -217,9 +217,9 @@ class MarkerStatistics:
                 session_idx=special_session_idx,
                 marker_name=marker_name,
                 statistic_name=self.STAT_PERCENTAGE_SESSIONS_WHERE_APPLIES,
-                statistic_value=(count / self.num_sessions * 100)
-                if self.num_sessions
-                else 100.0,
+                statistic_value=(
+                    (count / self.num_sessions * 100) if self.num_sessions else 100.0
+                ),
             )
 
     def _write_overall_statistics(self, table_writer: WriteRow) -> None:

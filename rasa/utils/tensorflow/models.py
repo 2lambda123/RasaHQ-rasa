@@ -324,9 +324,9 @@ class RasaModel(Model):
                 # We only need input, since output is always None and not
                 # consumed by our TF graphs.
                 batch_in = next(data_iterator)[0]
-                batch_out: Dict[
-                    Text, Union[np.ndarray, Dict[Text, Any]]
-                ] = self._rasa_predict(batch_in)
+                batch_out: Dict[Text, Union[np.ndarray, Dict[Text, Any]]] = (
+                    self._rasa_predict(batch_in)
+                )
                 if output_keys_expected:
                     batch_out = {
                         key: output

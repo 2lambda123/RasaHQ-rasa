@@ -2,6 +2,7 @@
 
 - increases the version number to dev version provided
 """
+
 import argparse
 import os
 import sys
