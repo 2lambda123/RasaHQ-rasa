@@ -103,13 +103,11 @@ def _print_bot_output(
 
 
 @overload
-async def _get_user_input(previous_response: None) -> Text:
-    ...
+async def _get_user_input(previous_response: None) -> Text: ...
 
 
 @overload
-async def _get_user_input(previous_response: Dict[str, Any]) -> Optional[Text]:
-    ...
+async def _get_user_input(previous_response: Dict[str, Any]) -> Optional[Text]: ...
 
 
 async def _get_user_input(

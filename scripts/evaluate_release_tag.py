@@ -1,6 +1,7 @@
 """Evaluate release tag for whether docs should be built or not.
 
 """
+
 import argparse
 from subprocess import check_output
 from typing import List

@@ -1500,9 +1500,9 @@ class Domain:
                 if not response_text or "\n" not in response_text:
                     continue
                 # Has new lines, use `LiteralScalarString`
-                final_responses[utter_action][i][
-                    KEY_RESPONSES_TEXT
-                ] = LiteralScalarString(response_text)
+                final_responses[utter_action][i][KEY_RESPONSES_TEXT] = (
+                    LiteralScalarString(response_text)
+                )
 
         return final_responses
 
