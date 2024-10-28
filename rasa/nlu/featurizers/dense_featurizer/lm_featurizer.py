@@ -35,7 +35,7 @@ MAX_SEQUENCE_LENGTHS = {
     "distilbert": 512,
     "roberta": 512,
     "camembert": 512,
-    "other": 512
+    "other": 512,
 }
 
 
@@ -154,9 +154,9 @@ class LanguageModelFeaturizer(DenseFeaturizer, GraphComponent):
             self.model_weights, cache_dir=self.cache_dir
         )
         if self.model_name == "other":
-            #always load pytorch weights
+            # always load pytorch weights
             self.model = model_class_dict[self.model_name].from_pretrained(
-                self.model_weights, cache_dir=self.cache_dir, from_pt= True
+                self.model_weights, cache_dir=self.cache_dir, from_pt=True
             )
         else:
             self.model = model_class_dict[self.model_name].from_pretrained(
