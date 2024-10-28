@@ -25,7 +25,7 @@ from transformers import (  # noqa: E402
     DistilBertTokenizer,
     RobertaTokenizer,
     CamembertTokenizer,
-    AutoTokenizer
+    AutoTokenizer,
 )
 from rasa.nlu.utils.hugging_face.transformers_pre_post_processors import (  # noqa: E402, E501
     bert_tokens_pre_processor,
@@ -54,7 +54,7 @@ model_class_dict: Dict[Text, Type[TFPreTrainedModel]] = {
     "distilbert": TFDistilBertModel,
     "roberta": TFRobertaModel,
     "camembert": TFCamembertModel,
-    "other": TFAutoModel
+    "other": TFAutoModel,
 }
 model_tokenizer_dict: Dict[Text, Type[PreTrainedTokenizer]] = {
     "bert": BertTokenizer,
@@ -65,7 +65,7 @@ model_tokenizer_dict: Dict[Text, Type[PreTrainedTokenizer]] = {
     "distilbert": DistilBertTokenizer,
     "roberta": RobertaTokenizer,
     "camembert": CamembertTokenizer,
-    "other": AutoTokenizer
+    "other": AutoTokenizer,
 }
 model_weights_defaults = {
     "bert": "rasa/LaBSE",
@@ -76,7 +76,7 @@ model_weights_defaults = {
     "distilbert": "distilbert-base-uncased",
     "roberta": "roberta-base",
     "camembert": "camembert-base",
-    "other": "sentence-transformers/all-MiniLM-L6-v2"
+    "other": "sentence-transformers/all-MiniLM-L6-v2",
 }
 
 model_special_tokens_pre_processors = {
@@ -100,7 +100,7 @@ model_tokens_cleaners = {
     "distilbert": bert_tokens_cleaner,  # uses the same as BERT
     "roberta": gpt2_tokens_cleaner,  # Uses the same as GPT2
     "camembert": xlnet_tokens_cleaner,  # Removing underscores _
-    "other": bert_tokens_cleaner
+    "other": bert_tokens_cleaner,
 }
 
 model_embeddings_post_processors = {
@@ -112,5 +112,5 @@ model_embeddings_post_processors = {
     "distilbert": bert_embeddings_post_processor,
     "roberta": roberta_embeddings_post_processor,
     "camembert": roberta_embeddings_post_processor,
-    "other": bert_embeddings_post_processor
+    "other": bert_embeddings_post_processor,
 }
