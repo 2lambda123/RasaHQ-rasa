@@ -458,7 +458,7 @@ def _is_docker() -> bool:
 
 
 def with_default_context_fields(
-    context: Optional[Dict[Text, Any]] = None
+    context: Optional[Dict[Text, Any]] = None,
 ) -> Dict[Text, Any]:
     """Return a new context dictionary with default and provided field values merged.
 

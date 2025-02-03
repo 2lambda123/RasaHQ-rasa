@@ -339,7 +339,7 @@ class CountVectorsFeaturizer(SparseFeaturizer, GraphComponent):
 
     @staticmethod
     def _convert_attribute_tokens_to_texts(
-        attribute_tokens: Dict[Text, List[List[Text]]]
+        attribute_tokens: Dict[Text, List[List[Text]]],
     ) -> Dict[Text, List[Text]]:
         attribute_texts = {}
 
@@ -681,7 +681,7 @@ class CountVectorsFeaturizer(SparseFeaturizer, GraphComponent):
 
     @staticmethod
     def _is_any_model_trained(
-        attribute_vocabularies: Dict[Text, Optional[Dict[Text, int]]]
+        attribute_vocabularies: Dict[Text, Optional[Dict[Text, int]]],
     ) -> bool:
         """Check if any model got trained."""
         return any(value is not None for value in attribute_vocabularies.values())
