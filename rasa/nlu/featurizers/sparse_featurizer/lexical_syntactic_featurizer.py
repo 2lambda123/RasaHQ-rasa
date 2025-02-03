@@ -358,7 +358,7 @@ class LexicalSyntacticFeaturizer(SparseFeaturizer, GraphComponent):
 
     @staticmethod
     def _build_feature_to_index_map(
-        feature_vocabulary: Dict[Tuple[int, Text], Set[Text]]
+        feature_vocabulary: Dict[Tuple[int, Text], Set[Text]],
     ) -> Dict[Tuple[int, Text], Dict[Text, int]]:
         """Creates a nested dictionary for mapping raw features to indices.
 

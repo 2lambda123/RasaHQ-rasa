@@ -468,7 +468,7 @@ class TEDPolicy(Policy):
 
     @staticmethod
     def _should_extract_entities(
-        entity_tags: List[List[Dict[Text, List[Features]]]]
+        entity_tags: List[List[Dict[Text, List[Features]]]],
     ) -> bool:
         for turns_tags in entity_tags:
             for turn_tags in turns_tags:
@@ -1360,7 +1360,7 @@ class TED(TransformerRasaModel):
 
     @staticmethod
     def _compute_dialogue_indices(
-        tf_batch_data: Dict[Text, Dict[Text, List[tf.Tensor]]]
+        tf_batch_data: Dict[Text, Dict[Text, List[tf.Tensor]]],
     ) -> None:
         dialogue_lengths = tf.cast(tf_batch_data[DIALOGUE][LENGTH][0], dtype=tf.int32)
         # wrap in a list, because that's the structure of tf_batch_data
@@ -1399,7 +1399,7 @@ class TED(TransformerRasaModel):
 
     @staticmethod
     def _collect_label_attribute_encodings(
-        all_labels_encoded: Dict[Text, tf.Tensor]
+        all_labels_encoded: Dict[Text, tf.Tensor],
     ) -> tf.Tensor:
         # Initialize with at least one attribute first
         # so that the subsequent TF ops are simplified.

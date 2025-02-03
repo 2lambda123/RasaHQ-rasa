@@ -420,7 +420,7 @@ class RasaFeatureCombiningLayer(RasaCustomLayer):
 
     @staticmethod
     def _get_present_feature_types(
-        attribute_signature: Dict[Text, List[FeatureSignature]]
+        attribute_signature: Dict[Text, List[FeatureSignature]],
     ) -> Dict[Text, bool]:
         """Determines feature types that are present.
 

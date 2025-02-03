@@ -239,7 +239,7 @@ class RasaModel(Model):
 
     @staticmethod
     def _dynamic_signature(
-        batch_in: Union[Tuple[tf.Tensor, ...], Tuple[np.ndarray, ...]]
+        batch_in: Union[Tuple[tf.Tensor, ...], Tuple[np.ndarray, ...]],
     ) -> List[List[tf.TensorSpec]]:
         element_spec = []
         for tensor in batch_in:
@@ -377,7 +377,7 @@ class RasaModel(Model):
         """Recursively replaces empty list or np array with None in a dictionary."""
 
         def _recurse(
-            x: Union[Dict[Text, Any], List[Any], np.ndarray]
+            x: Union[Dict[Text, Any], List[Any], np.ndarray],
         ) -> Optional[Union[Dict[Text, Any], List[Any], np.ndarray]]:
             if isinstance(x, dict):
                 return {k: _recurse(v) for k, v in x.items()}
