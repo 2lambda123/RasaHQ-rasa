@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
     
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502 #v3.0.1
+        uses: aws-actions/configure-aws-credentials@ececac1a45f3b08a01d2dd070d28d111c5fe6722 #v3.0.1
         with:
           role-to-assume: ${{ secrets.GIT_BACKUP_ROLE_ARN }}
           aws-region: ${{ secrets.GIT_BACKUP_REGION }}
